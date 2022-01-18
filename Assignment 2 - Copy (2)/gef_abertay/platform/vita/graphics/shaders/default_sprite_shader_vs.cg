@@ -1,0 +1,16 @@
+﻿void main(
+	float3 position,
+	uniform float4x4 proj_matrix,
+	uniform float4x4 sprite_data,
+	float4 out vPosition : POSITION,
+	float4 out vColor : COLOR0,
+	float2 out vTexCoord : TEXCOORD0)
+{
+	float2 trans_vert =
+		float2(sprite_data[0][2], sprite_data[1][2]) +
+		mul(float2x2(sprite_data[0][0], sprite_data[0][1], sprite_data[1][0], sprite_data[1][1]), position.xy); // column major
+
+	vTexCoord = (position.xy + float2(0.5, 0.5)) * float2(sprite_data[2][1], sprite_data[3][1]) + float2(sprite_data[2][0], sprite_data[3][0]);
+	vPosition = mul(float4(trans_vert.x, trans_vert.y, sprite_data[2][2], 1.f), proj_matrix);
+	vColor = float4(sprite_data[0][3], sprite_data[1][3], sprite_data[2][3], sprite_data[3][3]);
+}

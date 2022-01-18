@@ -1,0 +1,62 @@
+#define NUM_LIGHTS 4
+#define NUM_BONE_MATRICES 128
+
+void main(
+	float3 position : POSITION,
+	float3 normal : NORMAL,
+	int4 bone_indices : BLENDINDICES,
+	float4 bone_weights : BLENDWEIGHT,
+	float2 uv : TEXCOORD0,
+	uniform float4x4 wvp,
+	uniform float4x4 world,
+//	uniform float4x4 invworld,
+	uniform float4 light_position[NUM_LIGHTS],
+	uniform float4x4 bone_matrices[NUM_BONE_MATRICES],
+	float4 out output_position : POSITION,
+	float3 out output_normal : TEXCOORD0,
+	float2 out output_uv : TEXCOORD1,
+	float3 out output_light_vector1 : TEXCOORD2,
+	float3 out output_light_vector2 : TEXCOORD3,
+	float3 out output_light_vector3 : TEXCOORD4,
+	float3 out output_light_vector4 : TEXCOORD5
+	)
+{
+	output_uv = uv;
+
+
+	float4 normal_vec = float4(normal, 0);
+	float4 position_vec = float4(position, 1);
+
+
+	int4 indices = bone_indices;
+	// bone 0
+	float4 world_position = bone_weights.x*mul(position_vec, bone_matrices[indices.x]);
+	float4 temp_normal = bone_weights.x*mul(normal_vec, bone_matrices[indices.x]);
+
+	// bone 1
+	world_position += bone_weights.y*mul(position_vec, bone_matrices[indices.y]);
+	temp_normal += bone_weights.y*mul(normal_vec, bone_matrices[indices.y]);
+	
+	// bone 2
+	world_position += bone_weights.z*mul(position_vec, bone_matrices[indices.z]);
+	temp_normal += bone_weights.z*mul(normal_vec, bone_matrices[indices.z]);
+
+	// bone 3
+	world_position += bone_weights.w*mul(position_vec, bone_matrices[indices.w]);
+	temp_normal += bone_weights.w*mul(normal_vec, bone_matrices[indices.w]);
+
+	normal_vec = mul(temp_normal, world);
+	output_normal = normalize(normal_vec.xyz);
+
+	output_position = mul(world_position, wvp);
+	world_position = mul(world_position, world);
+
+	output_light_vector1 = light_position[0].xyz - world_position.xyz;
+	output_light_vector1 = normalize(output_light_vector1);
+	output_light_vector2 = light_position[1].xyz - world_position.xyz;
+	output_light_vector2 = normalize(output_light_vector2);
+	output_light_vector3 = light_position[2].xyz - world_position.xyz;
+	output_light_vector3 = normalize(output_light_vector3);
+	output_light_vector4 = light_position[3].xyz - world_position.xyz;
+	output_light_vector4 = normalize(output_light_vector4);
+}

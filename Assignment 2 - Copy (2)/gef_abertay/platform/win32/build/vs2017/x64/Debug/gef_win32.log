@@ -1,0 +1,6 @@
+﻿  debug_log_win32.cpp
+  file_win32.cpp
+  platform_win32_null_renderer.cpp
+  window_win32.cpp
+  Generating Code...
+  gef_win32.vcxproj -> D:\University Stuff\CMP 208\Assignment 2 - Copy (2)\Assignment\build\vs2017\x64\Debug\gef_win32.lib

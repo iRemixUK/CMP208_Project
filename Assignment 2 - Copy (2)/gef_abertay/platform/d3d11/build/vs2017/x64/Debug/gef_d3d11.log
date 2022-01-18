@@ -1,0 +1,24 @@
+﻿  audio_manager_d3d11.cpp
+  depth_buffer_d3d11.cpp
+  index_buffer_d3d11.cpp
+  renderer_3d_d3d11.cpp
+  render_target_d3d11.cpp
+  shader_interface_d3d11.cpp
+  sprite_renderer_d3d11.cpp
+  texture_d3d11.cpp
+  vertex_buffer_d3d11.cpp
+  input_manager_d3d11.cpp
+  keyboard_d3d11.cpp
+  sony_controller_input_manager_d3d11.cpp
+  touch_input_manager_d3d11.cpp
+  platform_d3d11.cpp
+  Generating Code...
+vorbis.lib(vorbisenc.obj) : warning LNK4006: vorbis_encode_init already defined in vorbisenc.lib(vorbisenc.obj); second definition ignored
+vorbis.lib(vorbisenc.obj) : warning LNK4006: vorbis_encode_setup_managed already defined in vorbisenc.lib(vorbisenc.obj); second definition ignored
+vorbis.lib(vorbisenc.obj) : warning LNK4006: vorbis_encode_setup_vbr already defined in vorbisenc.lib(vorbisenc.obj); second definition ignored
+vorbis.lib(vorbisenc.obj) : warning LNK4006: vorbis_encode_init_vbr already defined in vorbisenc.lib(vorbisenc.obj); second definition ignored
+vorbis.lib(vorbisenc.obj) : warning LNK4006: vorbis_encode_setup_init already defined in vorbisenc.lib(vorbisenc.obj); second definition ignored
+vorbis.lib(vorbisenc.obj) : warning LNK4006: vorbis_encode_ctl already defined in vorbisenc.lib(vorbisenc.obj); second definition ignored
+winmm.lib(WINMM.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in openal32.lib(OpenAL32.dll); second definition ignored
+  gef_d3d11.vcxproj -> D:\University Stuff\CMP 208\Assignment 2 - Copy (2)\Assignment\build\vs2017\x64\Debug\gef_d3d11.lib
+          1 file(s) copied.

@@ -1,0 +1,20 @@
+﻿  png.c
+  pngerror.c
+  pngget.c
+  pngmem.c
+  pngpread.c
+  pngread.c
+D:\University Stuff\CMP 208\Assignment 2 - Copy (2)\gef_abertay\external\libpng\pngread.c(1489,21): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\University Stuff\CMP 208\Assignment 2 - Copy (2)\gef_abertay\external\libpng\pngread.c(1505,43): warning C4996: 'strerror': This function or variable may be unsafe. Consider using strerror_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  pngrio.c
+  pngrtran.c
+  pngrutil.c
+  pngset.c
+  pngtrans.c
+  pngwio.c
+  pngwrite.c
+D:\University Stuff\CMP 208\Assignment 2 - Copy (2)\gef_abertay\external\libpng\pngwrite.c(480,11): warning C4996: 'gmtime': This function or variable may be unsafe. Consider using gmtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  pngwtran.c
+  pngwutil.c
+  Generating Code...
+  libpng.vcxproj -> D:\University Stuff\CMP 208\Assignment 2 - Copy (2)\Assignment\build\vs2017\x64\Debug\libpng.lib

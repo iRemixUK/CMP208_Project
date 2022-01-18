@@ -1,0 +1,13 @@
+﻿  adler32.c
+  compress.c
+  crc32.c
+  deflate.c
+  infback.c
+  inffast.c
+  inflate.c
+  inftrees.c
+  trees.c
+  uncompr.c
+  zutil.c
+  Generating Code...
+  zlib.vcxproj -> D:\University Stuff\CMP 208\Assignment 2 - Copy (2)\Assignment\build\vs2017\x64\Debug\zlib.lib
